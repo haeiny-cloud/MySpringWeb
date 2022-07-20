@@ -20,12 +20,12 @@ public class FavoriteMusicRequestDto {
     public FavoriteMusic toEntity() {
         FavoriteMusic music = new FavoriteMusic();
         music.setCollectionId(this.collectionId);
-        music.setCollectionId(this.collectionType);
-        music.setCollectionId(this.artistId);
-        music.setCollectionId(this.artistName);
-        music.setCollectionId(this.artistViewUrl);
-        music.setCollectionId(this.collectionName);
-        music.setCollectionId(this.collectionViewUrl);
+        music.setCollectionType(this.collectionType);
+        music.setArtistId(this.artistId);
+        music.setArtistName(this.artistName);
+        music.setArtistViewUrl(this.artistViewUrl);
+        music.setCollectionName(this.collectionName);
+        music.setCollectionViewUrl(this.collectionViewUrl);
         return music;
     }
 }
