@@ -31,6 +31,11 @@ pipeline {
                 success {
                     echo 'maven build success'
                 }
+                always {
+                    echo 'done maven build'
+                    slackSend (channel: '#devops', color: '#FFFF00',
+                        message: "${env.userId} STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                }
                 failure {
                     echo 'maven build failed'
                 }
