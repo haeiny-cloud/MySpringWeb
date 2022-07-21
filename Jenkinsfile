@@ -41,5 +41,23 @@ pipeline {
                 }
             }
         }
+        stage('dockerizing') {
+            steps {
+                sh 'docker build . -t myspringweb'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'docker run -d -p 40589:80 myspringweb'
+            }
+            post {
+                success {
+                    echo 'success'
+                }
+                failure {
+                    echo 'failed'
+                }
+            }
+        }
     }
 }
