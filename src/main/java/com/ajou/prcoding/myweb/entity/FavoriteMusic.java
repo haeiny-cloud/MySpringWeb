@@ -24,5 +24,8 @@ public class FavoriteMusic {
     @Column private String artistViewUrl;
     @Column private String collectionName;
     @Column private String collectionViewUrl;
+
+    public FavoriteMusic() {
+    }
 }
 

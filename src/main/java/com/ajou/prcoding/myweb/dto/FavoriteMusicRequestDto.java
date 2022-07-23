@@ -17,6 +17,9 @@ public class FavoriteMusicRequestDto {
     private String collectionName;
     private String collectionViewUrl;
 
+    public FavoriteMusicRequestDto() {
+    }
+
     public FavoriteMusic toEntity() {
         FavoriteMusic music = new FavoriteMusic();
         music.setCollectionId(this.collectionId);
