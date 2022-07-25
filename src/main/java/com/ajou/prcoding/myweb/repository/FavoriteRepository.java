@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface FavoriteRepository extends JpaRepository<FavoriteMusic, String> {
     List<FavoriteMusic> findAll();
+    FavoriteMusic findByCollectionId(String id);
     void deleteByCollectionId(String id);
 }

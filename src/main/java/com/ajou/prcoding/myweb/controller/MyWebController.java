@@ -34,6 +34,9 @@ public class MyWebController {
         return service.getLikes();
     }
 
+    @GetMapping(value = "/likes/{id}")
+    public FavoriteMusic isLiked(@PathVariable String id) { return service.getExist(id); }
+
     @PostMapping(value="/likes")
     public int postLikes(@RequestBody FavoriteMusicRequestDto favorite) {
         return service.saveFavorite(favorite);

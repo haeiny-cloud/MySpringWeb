@@ -42,6 +42,15 @@ public class MusicService {
         }
     }
 
+    public FavoriteMusic getExist(String id){
+        try {
+            return albumsRepo.findByCollectionId(id);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
+
     public int saveFavorite(FavoriteMusicRequestDto favorite)
     {
         FavoriteMusic music = albumsRepo.save(favorite.toEntity());
